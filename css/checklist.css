@@ -1,0 +1,136 @@
+.swipe-page {
+  min-height: 100svh;
+  padding-top: var(--top-space);
+}
+
+.swipe-shell {
+  display: grid;
+  min-height: calc(100svh - var(--top-space));
+  align-content: center;
+  gap: 18px;
+  padding-bottom: 24px;
+}
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.card-stage {
+  position: relative;
+  display: grid;
+  min-height: min(58svh, 460px);
+  align-items: stretch;
+  touch-action: pan-y;
+}
+
+.swipe-card {
+  position: relative;
+  display: grid;
+  min-height: min(58svh, 460px);
+  align-content: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  user-select: none;
+  will-change: transform;
+}
+
+.swipe-card.is-animating {
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.swipe-card h1 {
+  font-size: clamp(3rem, 18vw, 7rem);
+  text-align: center;
+}
+
+.item-subtitle {
+  max-width: 28rem;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 5vw, 1.35rem);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.swipe-label {
+  position: absolute;
+  top: 18px;
+  border-radius: var(--radius);
+  font-weight: 900;
+  opacity: 0;
+  padding: 8px 10px;
+  pointer-events: none;
+}
+
+.swipe-label.confirm {
+  left: 18px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.swipe-label.skip {
+  right: 18px;
+  background: var(--skip-soft);
+  color: var(--skip);
+}
+
+.hint-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.action-hint {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 12px;
+  text-align: center;
+}
+
+.finish-page {
+  display: grid;
+  gap: 18px;
+  padding-top: 18px;
+}
+
+.summary-group {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.summary-group h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.summary-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.summary-list li {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 12px;
+}
+
+.finish-actions {
+  display: grid;
+  gap: 10px;
+}

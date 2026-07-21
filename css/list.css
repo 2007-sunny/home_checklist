@@ -1,0 +1,71 @@
+.list-page {
+  min-height: 100svh;
+  padding-top: calc(var(--top-space) + 18px);
+}
+
+.list-header {
+  margin-bottom: 24px;
+}
+
+.list-header h1 {
+  font-size: clamp(2.4rem, 13vw, 4.5rem);
+}
+
+.item-list {
+  display: grid;
+  gap: 10px;
+  padding-bottom: 24px;
+}
+
+.list-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 64px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 12px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-strong);
+}
+
+.list-item.confirmed .status-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.list-item.skipped .status-dot {
+  border-color: var(--skip);
+  background: var(--skip);
+}
+
+.item-copy {
+  min-width: 0;
+}
+
+.item-copy strong {
+  display: block;
+  font-size: 1.08rem;
+}
+
+.item-copy span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.jump-label {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 800;
+}

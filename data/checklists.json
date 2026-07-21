@@ -1,0 +1,8 @@
+[
+  {
+    "id": "home",
+    "title": "Home Checklist",
+    "description": "A fast pre-leaving check for everyday essentials.",
+    "file": "home.json"
+  }
+]

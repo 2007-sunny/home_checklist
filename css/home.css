@@ -1,0 +1,44 @@
+.home-page {
+  min-height: 100svh;
+  padding-top: 44px;
+}
+
+.home-header {
+  margin-bottom: 34px;
+}
+
+.checklist-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.checklist-card {
+  display: grid;
+  min-height: 132px;
+  align-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(28, 31, 35, 0.07);
+  padding: 18px;
+}
+
+.checklist-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.45rem;
+}
+
+.checklist-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  color: var(--accent);
+  font-weight: 800;
+}

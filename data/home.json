@@ -1,0 +1,56 @@
+{
+  "id": "home",
+  "title": "Home Checklist",
+  "items": [
+    {
+      "id": "keys",
+      "name": "Keys",
+      "subtitle": "Door, scooter, mailbox, or office keys"
+    },
+    {
+      "id": "wallet",
+      "name": "Wallet",
+      "subtitle": "Cards, cash, ID"
+    },
+    {
+      "id": "phone",
+      "name": "Phone",
+      "subtitle": "Enough battery for the trip"
+    },
+    {
+      "id": "earbuds",
+      "name": "Earbuds",
+      "subtitle": "Case included"
+    },
+    {
+      "id": "water-bottle",
+      "name": "Water Bottle",
+      "subtitle": "Filled and sealed"
+    },
+    {
+      "id": "umbrella",
+      "name": "Umbrella",
+      "subtitle": "Weather check"
+    },
+    {
+      "id": "charger",
+      "name": "Charger",
+      "subtitle": "Cable and power adapter"
+    },
+    {
+      "id": "medication",
+      "name": "Medication",
+      "subtitle": "Daily or emergency medicine"
+    },
+    {
+      "id": "lights",
+      "name": "Lights Off",
+      "subtitle": "Main rooms and bathroom"
+    },
+    {
+      "id": "door",
+      "name": "Door Locked",
+      "subtitle": "Final check before leaving"
+    }
+  ]
+}
