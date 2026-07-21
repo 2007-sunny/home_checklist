@@ -1,8 +1,8 @@
 [
   {
     "id": "home",
-    "title": "Home Checklist",
-    "description": "A fast pre-leaving check for everyday essentials.",
+    "title": "回家/出門檢查表",
+    "description": "日常出門必備物品快速檢查",
     "file": "home.json"
   }
 ]
