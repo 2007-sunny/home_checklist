@@ -3,54 +3,39 @@
   "title": "回家/出門檢查表",
   "items": [
     {
-      "id": "keys",
-      "name": "鑰匙",
-      "subtitle": "大門、機車、信箱或辦公室鑰匙"
+      "id": "phone",
+      "name": "手機",
+      "subtitle": "確認電量足夠與配件"
+    },
+    {
+      "id": "tablet",
+      "name": "平板",
+      "subtitle": "平板電腦與觸控筆"
+    },
+    {
+      "id": "laptop",
+      "name": "電腦",
+      "subtitle": "筆記型電腦與充電線"
+    },
+    {
+      "id": "ortho-k",
+      "name": "角膜塑形片",
+      "subtitle": "塑形片盒與相關配備"
+    },
+    {
+      "id": "contact-solution",
+      "name": "眼鏡水",
+      "subtitle": "隱形眼鏡保養液/生理食鹽水"
+    },
+    {
+      "id": "student-id",
+      "name": "學生證",
+      "subtitle": "校園門禁與身分驗證"
     },
     {
       "id": "wallet",
-      "name": "皮夾/錢包",
-      "subtitle": "卡片、現金、證件"
-    },
-    {
-      "id": "phone",
-      "name": "手機",
-      "subtitle": "確認電量足夠出門使用"
-    },
-    {
-      "id": "earbuds",
-      "name": "耳機",
-      "subtitle": "含耳機充電盒"
-    },
-    {
-      "id": "water-bottle",
-      "name": "水壺/水瓶",
-      "subtitle": "已裝水並鎖緊"
-    },
-    {
-      "id": "umbrella",
-      "name": "雨傘",
-      "subtitle": "確認今日天氣預報"
-    },
-    {
-      "id": "charger",
-      "name": "充電器",
-      "subtitle": "充電線與充電頭"
-    },
-    {
-      "id": "medication",
-      "name": "藥品",
-      "subtitle": "日常或備用藥物"
-    },
-    {
-      "id": "lights",
-      "name": "關閉電源/電燈",
-      "subtitle": "客廳、房間與浴室電燈"
-    },
-    {
-      "id": "door",
-      "name": "門窗鎖妥",
-      "subtitle": "出門前最後確認"
+      "name": "皮包",
+      "subtitle": "現金、卡片與隨身證件"
     }
   ]
 }
