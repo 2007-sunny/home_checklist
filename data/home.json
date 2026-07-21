@@ -1,56 +1,56 @@
 {
   "id": "home",
-  "title": "Home Checklist",
+  "title": "回家/出門檢查表",
   "items": [
     {
       "id": "keys",
-      "name": "Keys",
-      "subtitle": "Door, scooter, mailbox, or office keys"
+      "name": "鑰匙",
+      "subtitle": "大門、機車、信箱或辦公室鑰匙"
     },
     {
       "id": "wallet",
-      "name": "Wallet",
-      "subtitle": "Cards, cash, ID"
+      "name": "皮夾/錢包",
+      "subtitle": "卡片、現金、證件"
     },
     {
       "id": "phone",
-      "name": "Phone",
-      "subtitle": "Enough battery for the trip"
+      "name": "手機",
+      "subtitle": "確認電量足夠出門使用"
     },
     {
       "id": "earbuds",
-      "name": "Earbuds",
-      "subtitle": "Case included"
+      "name": "耳機",
+      "subtitle": "含耳機充電盒"
     },
     {
       "id": "water-bottle",
-      "name": "Water Bottle",
-      "subtitle": "Filled and sealed"
+      "name": "水壺/水瓶",
+      "subtitle": "已裝水並鎖緊"
     },
     {
       "id": "umbrella",
-      "name": "Umbrella",
-      "subtitle": "Weather check"
+      "name": "雨傘",
+      "subtitle": "確認今日天氣預報"
     },
     {
       "id": "charger",
-      "name": "Charger",
-      "subtitle": "Cable and power adapter"
+      "name": "充電器",
+      "subtitle": "充電線與充電頭"
     },
     {
       "id": "medication",
-      "name": "Medication",
-      "subtitle": "Daily or emergency medicine"
+      "name": "藥品",
+      "subtitle": "日常或備用藥物"
     },
     {
       "id": "lights",
-      "name": "Lights Off",
-      "subtitle": "Main rooms and bathroom"
+      "name": "關閉電源/電燈",
+      "subtitle": "客廳、房間與浴室電燈"
     },
     {
       "id": "door",
-      "name": "Door Locked",
-      "subtitle": "Final check before leaving"
+      "name": "門窗鎖妥",
+      "subtitle": "出門前最後確認"
     }
   ]
 }
