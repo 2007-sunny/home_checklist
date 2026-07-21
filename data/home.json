@@ -15,7 +15,7 @@
     {
       "id": "laptop",
       "name": "電腦",
-      "subtitle": "筆記型電腦與充電線"
+      "subtitle": "筆記型電腦與線材"
     },
     {
       "id": "ortho-k",
@@ -36,6 +36,16 @@
       "id": "wallet",
       "name": "皮包",
       "subtitle": "現金、卡片與隨身證件"
+    },
+    {
+      "id": "water-bottle",
+      "name": "水壺",
+      "subtitle": "已裝水並鎖緊"
+    },
+    {
+      "id": "charger-cable",
+      "name": "充電線",
+      "subtitle": "手機/設備充電線材與充電頭"
     }
   ]
 }
