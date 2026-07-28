@@ -49,6 +49,31 @@ export function recordDecision(checklist, session, itemId, decision) {
   return nextSession;
 }
 
+export function toggleConfirmed(checklist, session, itemId) {
+  const isConfirmed = session.confirmed.includes(itemId);
+  const nextSession = {
+    ...session,
+    confirmed: isConfirmed
+      ? session.confirmed.filter((id) => id !== itemId)
+      : [...session.confirmed.filter((id) => id !== itemId), itemId],
+    skipped: session.skipped.filter((id) => id !== itemId)
+  };
+
+  saveSession(checklist.id, nextSession);
+  return nextSession;
+}
+
+export function setCurrentIndex(checklist, session, index) {
+  const currentIndex = Math.max(0, Math.min(index, checklist.items.length - 1));
+  const nextSession = { ...session, currentIndex };
+  saveSession(checklist.id, nextSession);
+  return nextSession;
+}
+
+export function moveCurrentIndex(checklist, session, direction) {
+  return setCurrentIndex(checklist, session, session.currentIndex + direction);
+}
+
 export function isComplete(checklist, session) {
   return session.confirmed.length + session.skipped.length >= checklist.items.length;
 }
