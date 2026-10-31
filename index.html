@@ -1,24 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Preflight Checklists</title>
+    <meta name="theme-color" content="#146c63">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>回家檢查表</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="icons/icon-180.png">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/home.css">
   </head>
   <body>
     <main class="page home-page">
       <header class="home-header">
-        <p class="eyebrow">Before leaving</p>
-        <h1>Checklists</h1>
+        <p class="eyebrow">出門前</p>
+        <h1>檢查表</h1>
       </header>
 
-      <section class="checklist-grid" id="checklistGrid" aria-label="Available checklists">
-        <p class="muted">Loading checklists...</p>
+      <section class="checklist-grid" id="checklistGrid" aria-label="全部檢查表">
+        <p class="muted">載入中...</p>
       </section>
     </main>
 
     <script type="module" src="js/home.js"></script>
+    <script type="module" src="js/register-sw.js"></script>
   </body>
 </html>

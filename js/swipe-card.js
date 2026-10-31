@@ -4,11 +4,16 @@ export function bindSwipeCard(card, onDecision) {
   let startX = 0;
   let currentX = 0;
   let dragging = false;
+  let decided = false;
 
   const confirmLabel = card.querySelector("[data-swipe-label='confirm']");
   const skipLabel = card.querySelector("[data-swipe-label='skip']");
 
   card.addEventListener("pointerdown", (event) => {
+    if (decided) {
+      return;
+    }
+
     dragging = true;
     startX = event.clientX;
     currentX = 0;
@@ -28,7 +33,10 @@ export function bindSwipeCard(card, onDecision) {
   });
 
   card.addEventListener("pointerup", () => finishDrag());
-  card.addEventListener("pointercancel", () => resetCard(card, confirmLabel, skipLabel));
+  card.addEventListener("pointercancel", () => {
+    dragging = false;
+    resetCard(card, confirmLabel, skipLabel);
+  });
 
   function finishDrag() {
     if (!dragging) {
@@ -42,14 +50,24 @@ export function bindSwipeCard(card, onDecision) {
       return;
     }
 
-    const decision = currentX > 0 ? "confirmed" : "skipped";
-    const exitX = currentX > 0 ? window.innerWidth : -window.innerWidth;
+    dismiss(currentX > 0 ? "confirmed" : "skipped");
+  }
+
+  function dismiss(decision) {
+    if (decided) {
+      return;
+    }
+
+    decided = true;
+    const direction = decision === "confirmed" ? 1 : -1;
     card.classList.add("is-animating");
-    card.style.transform = `translateX(${exitX}px) rotate(${currentX > 0 ? 18 : -18}deg)`;
+    card.style.transform = `translateX(${direction * window.innerWidth}px) rotate(${direction * 18}deg)`;
     card.style.opacity = "0";
 
     window.setTimeout(() => onDecision(decision), 170);
   }
+
+  return { dismiss };
 }
 
 function updateLabels(distance, confirmLabel, skipLabel) {

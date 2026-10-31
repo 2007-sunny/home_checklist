@@ -1,34 +1,18 @@
 import { getSession, saveSession } from "./storage.js";
 
-export function createSession(checklist, startItemId = "") {
-  const startIndex = Math.max(
-    0,
-    checklist.items.findIndex((item) => item.id === startItemId)
-  );
-
+export function createSession(checklist) {
   return {
     checklistId: checklist.id,
-    currentIndex: startIndex,
+    currentIndex: 0,
     confirmed: [],
     skipped: [],
     updatedAt: new Date().toISOString()
   };
 }
 
-export function loadOrCreateSession(checklist, startItemId = "") {
+export function loadOrCreateSession(checklist) {
   const stored = getSession(checklist.id);
-  const session = stored ? normalizeSession(checklist, stored) : createSession(checklist);
-
-  if (startItemId) {
-    const startIndex = checklist.items.findIndex((item) => item.id === startItemId);
-    if (startIndex >= 0) {
-      const jumpedSession = { ...session, currentIndex: startIndex };
-      saveSession(checklist.id, jumpedSession);
-      return jumpedSession;
-    }
-  }
-
-  return session;
+  return stored ? normalizeSession(checklist, stored) : createSession(checklist);
 }
 
 export function recordDecision(checklist, session, itemId, decision) {
@@ -64,7 +48,7 @@ export function toggleConfirmed(checklist, session, itemId) {
 }
 
 export function setCurrentIndex(checklist, session, index) {
-  const currentIndex = Math.max(0, Math.min(index, checklist.items.length - 1));
+  const currentIndex = clampIndex(checklist, index);
   const nextSession = { ...session, currentIndex };
   saveSession(checklist.id, nextSession);
   return nextSession;
@@ -72,6 +56,10 @@ export function setCurrentIndex(checklist, session, index) {
 
 export function moveCurrentIndex(checklist, session, direction) {
   return setCurrentIndex(checklist, session, session.currentIndex + direction);
+}
+
+export function focusNextPending(checklist, session) {
+  return setCurrentIndex(checklist, session, findNextIndex(checklist, session));
 }
 
 export function isComplete(checklist, session) {
@@ -100,7 +88,7 @@ function normalizeSession(checklist, session) {
   return {
     checklistId: checklist.id,
     currentIndex: Number.isInteger(session.currentIndex)
-      ? Math.min(session.currentIndex, checklist.items.length)
+      ? clampIndex(checklist, session.currentIndex)
       : 0,
     confirmed,
     skipped,
@@ -111,5 +99,9 @@ function normalizeSession(checklist, session) {
 function findNextIndex(checklist, session) {
   const processed = new Set([...session.confirmed, ...session.skipped]);
   const nextIndex = checklist.items.findIndex((item) => !processed.has(item.id));
-  return nextIndex === -1 ? checklist.items.length : nextIndex;
+  return nextIndex === -1 ? session.currentIndex : nextIndex;
+}
+
+function clampIndex(checklist, index) {
+  return Math.max(0, Math.min(index, checklist.items.length - 1));
 }

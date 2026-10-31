@@ -1,33 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Checklist View</title>
+    <meta name="theme-color" content="#146c63">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>檢查表</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="icons/icon-180.png">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/list.css">
   </head>
   <body>
     <header class="top-nav">
-      <a class="nav-link" id="swipeLink" href="checklist.html">Swipe Mode</a>
-      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" id="swipeLink" href="checklist.html">滑動模式</a>
+      <a class="nav-link" id="homeLink" href="index.html" hidden>全部清單</a>
+      <button class="nav-link" id="restartButton" type="button">重新開始</button>
     </header>
 
     <main class="page list-page">
       <header class="list-header">
-        <p class="eyebrow">Quick review</p>
-        <h1 id="listTitle">Checklist</h1>
+        <h1 id="listTitle">檢查表</h1>
+        <div class="list-status" id="listStatus" aria-live="polite"></div>
       </header>
 
-      <section class="list-card-panel" id="listCardPanel" aria-live="polite">
-        <p class="muted">Loading current item...</p>
-      </section>
-
-      <section class="item-list" id="itemList" aria-label="Checklist items">
-        <p class="muted">Loading items...</p>
+      <section class="item-list" id="itemList" aria-label="檢查項目">
+        <p class="muted">載入中...</p>
       </section>
     </main>
 
     <script type="module" src="js/list-page.js"></script>
+    <script type="module" src="js/register-sw.js"></script>
   </body>
 </html>

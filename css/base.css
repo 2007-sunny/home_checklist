@@ -125,6 +125,35 @@ h1 {
   color: var(--muted);
 }
 
+[hidden] {
+  display: none !important;
+}
+
+.progress {
+  display: grid;
+  gap: 8px;
+}
+
+.progress-label {
+  margin: 0;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.progress-track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--line);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
 .error-state {
   margin-top: var(--top-space);
   padding: 24px;

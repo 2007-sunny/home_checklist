@@ -1,24 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Checklist Mode</title>
+    <meta name="theme-color" content="#146c63">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>滑動模式</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="icons/icon-180.png">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/checklist.css">
   </head>
   <body>
     <header class="top-nav">
-      <button class="nav-link" id="modeToggle" type="button">List View</button>
-      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" id="listLink" href="list.html">← 回清單</a>
     </header>
 
     <main class="page swipe-page">
       <section class="swipe-shell" id="swipeShell" aria-live="polite">
-        <p class="muted">Loading checklist...</p>
+        <p class="muted">載入中...</p>
       </section>
     </main>
 
     <script type="module" src="js/checklist-page.js"></script>
+    <script type="module" src="js/register-sw.js"></script>
   </body>
 </html>

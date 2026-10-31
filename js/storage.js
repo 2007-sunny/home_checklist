@@ -22,20 +22,4 @@ export function saveSession(checklistId, session) {
 
 export function clearSession(checklistId) {
   localStorage.removeItem(`${keyPrefix}${checklistId}`);
-  localStorage.removeItem(`preflight.session.${checklistId}`);
-  localStorage.removeItem(`session_${checklistId}`);
 }
-
-export function clearAllChecklistSessions() {
-  Object.keys(localStorage)
-    .filter((key) => 
-      key.startsWith(keyPrefix) || 
-      key.startsWith("preflight.session.") || 
-      key.startsWith("session_") ||
-      key.startsWith("app_session_")
-    )
-    .forEach((key) => localStorage.removeItem(key));
-
-  sessionStorage.clear();
-}
-
